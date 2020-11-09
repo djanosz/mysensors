@@ -58,19 +58,15 @@ void presentation() {
 }
 
 void loop() {
-  // Keep sensing buttons
   saloon.tick();
-  gamingRoom.tick();
-  bedroom.tick();
-  bed1.tick();
-  bed2.tick();
-  guests.tick();
-  bathroom.tick();
-  mirror.tick();
-  kitchen.tick();
-  kitchenTable.tick();
-  workshop.tick();
-  corridor.tick();
+  saloon3.tick();
+  sypialnia.tick();
+  sypialnia2.tick();
+  garderoba.tick();
+  hania1.tick();
+  hania2.tick();
+  korytarz2.tick();
+  korytarzL.tick();
 }
 
 void receive(const MyMessage &message) {

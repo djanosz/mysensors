@@ -36,88 +36,137 @@ void clickCallback(void* pSensorId) {
 }
 
 void saloonClick() {
-  setOutput(SALOON_1_ID);
-  setOutput(SALOON_2_ID);
+  setOutput(KORYTARZ_5_ID);
+}
+void saloonDoubleClick() {
+  setOutput(KORYTARZ_1_ID);
 }
 void saloonOff() {
-  setOutput(SALOON_1_ID, Relay::OFF);
+  setOutput(SALOON_3_ID);
+}
+void saloon3Click() {
+  setOutput(SALOON_2_ID);
+  //setOutput(SALOON_2_ID);
+}
+void saloon3DoubleClick() {
+  // placeholder
+}
+void saloon3Off() {
+  //setOutput(SALOON_1_ID, Relay::OFF);
+  //setOutput(SALOON_2_ID, Relay::OFF);
+}
+void sypialniaClick() {
+  setOutput(SYPIALNIA_ID);
+  //setOutput(SALOON_2_ID);
+}
+void sypialniaDoubleClick() {
+  setOutput(KORYTARZ_1_ID);
+}
+void sypialniaOff() {
+  //setOutput(SALOON_1_ID, Relay::OFF);
+  //setOutput(SALOON_2_ID, Relay::OFF);
+}
+void sypialnia2Click() {
+  setOutput(SYPIALNIA2_ID);
+  //setOutput(SALOON_2_ID);
+}
+void sypialnia2DoubleClick() {
+  setOutput(KORYTARZ_1_ID);
+}
+void sypialnia2Off() {
+  //setOutput(SALOON_1_ID, Relay::OFF);
+  //setOutput(SALOON_2_ID, Relay::OFF);
+}
+void garderobaClick() {
+  setOutput(GARDEROBA_ID);
+}
+void garderobaDoubleClick() {
+  setOutput(KORYTARZ_5_ID);
+}
+void garderobaOff() {
+  setOutput(GARDEROBA_2_ID);
+}
+void hania1Click() {
+  setOutput(HANIA_1_ID);
+}
+void hania1DoubleClick() {
+  // placeholder
+}
+void hania1Off() {
+  // placeholder
+}
+void hania2Click() {
+  setOutput(HANIA_2_ID);
+}
+void hania2DoubleClick() {
+  // placeholder
+}
+void hania2Off() {
+  // placeholder
+}
+void korytarz2Click() {
+  setOutput(KORYTARZ_1_ID);
+}
+void korytarz2DoubleClick() {
+  setOutput(KORYTARZ_2_ID);
+}
+void korytarz2Off() {
   setOutput(SALOON_2_ID, Relay::OFF);
+  setOutput(KORYTARZ_5_ID, Relay::OFF);
+  setOutput(GARDEROBA_ID, Relay::OFF);
+  setOutput(KORYTARZ_ID, Relay::OFF);
+  setOutput(SYPIALNIA_ID, Relay::OFF);
+  setOutput(SYPIALNIA2_ID, Relay::OFF);
+  setOutput(HANIA_1_ID, Relay::OFF);
+  setOutput(HANIA_2_ID, Relay::OFF);
+  setOutput(ALL_OFF_ID, Relay::OFF);
+  setOutput(KORYTARZ_1_ID, Relay::OFF);
+  setOutput(GARDEROBA_2_ID, Relay::OFF);
 }
-void gamingRoomClick() {
-  setOutput(GAMING_ROOM_1_ID);
-  setOutput(GAMING_ROOM_2_ID);
+void korytarzLClick() {
+  setOutput(KORYTARZ_3_ID);
 }
-void gamingRoomOff() {
-  setOutput(GAMING_ROOM_1_ID, Relay::OFF);
-  setOutput(GAMING_ROOM_2_ID, Relay::OFF);
+void korytarzLDoubleClick() {
+  // placeholder
 }
-void bedroomOff() {
-  setOutput(BEDROOM_1_ID, Relay::OFF);
-  setOutput(BEDROOM_2_ID, Relay::OFF);
-  setOutput(BED_1_ID, Relay::OFF);
-  setOutput(BED_2_ID, Relay::OFF);
+void korytarzLOff() {
+  // placeholder
 }
-void bedroomClick() {
-  setOutput(BEDROOM_1_ID);
-  setOutput(BEDROOM_2_ID);
-}
-void bathroomClick() {
-  setOutput(BATHROOM_ID);
-  setOutput(BATHROOM_LED_ID);
-}
-void bathroomOff() {
-  setOutput(BATHROOM_ID, Relay::OFF);
-  setOutput(BATHROOM_LED_ID, Relay::OFF);
-  setOutput(MIRROR_ID, Relay::OFF);
-}
-void kitchenClick() {
-  setOutput(KITCHEN_ID);
-  setOutput(KITCHEN_LED1_ID);
-  setOutput(KITCHEN_LED2_ID);
-}
-void kitchenOff() {
-  setOutput(KITCHEN_ID, Relay::OFF);
-  setOutput(KITCHEN_LED1_ID, Relay::OFF);
-  setOutput(KITCHEN_LED2_ID, Relay::OFF);
-  setOutput(KITCHEN_TABLE_ID, Relay::OFF);
-}
-
 void setupButtons() {
   // Setup the button.
   saloon.attachClick(saloonClick);
   saloon.attachLongPressStop(saloonOff);
-  saloon.attachDoubleClick(clickCallback, SALOON_2_ID);
-
-  gamingRoom.attachClick(gamingRoomClick);
-  gamingRoom.attachLongPressStop(gamingRoomOff);
-  gamingRoom.attachDoubleClick(clickCallback, GAMING_ROOM_1_ID);
-
-  bedroom.attachClick(bedroomClick);
-  bedroom.attachLongPressStop(bedroomOff);
-  bedroom.attachDoubleClick(clickCallback, BEDROOM_2_ID);
-
-  bed1.attachClick(clickCallback, BED_1_ID);
-  bed1.attachLongPressStop(bedroomOff);
-  bed1.attachDoubleClick(clickCallback, BED_2_ID);
-
-  bed2.attachClick(clickCallback, BED_2_ID);
-  bed2.attachLongPressStop(bedroomOff);
-  bed2.attachDoubleClick(clickCallback, BED_1_ID);
-
-  guests.attachClick(clickCallback, GUESTS_ID);
-
-  bathroom.attachClick(bathroomClick);
-  bathroom.attachLongPressStop(bathroomOff);
-
-  mirror.attachClick(clickCallback, MIRROR_ID);
-
-  kitchen.attachClick(kitchenClick);
-  kitchen.attachLongPressStop(kitchenOff);
-  kitchen.attachDoubleClick(clickCallback, KITCHEN_LED1_ID);
-
-  kitchenTable.attachClick(clickCallback, KITCHEN_TABLE_ID);
-
-  workshop.attachClick(clickCallback, WORKSHOP_ID);
-
-  corridor.attachClick(clickCallback, CORRIDOR_ID);
+  saloon.attachDoubleClick(saloonDoubleClick);
+  
+  saloon3.attachClick(saloon3Click);
+  saloon3.attachLongPressStop(saloon3Off);
+  saloon3.attachDoubleClick(saloon3DoubleClick);
+  
+  sypialnia.attachClick(sypialniaClick);
+  sypialnia.attachLongPressStop(sypialniaOff);
+  sypialnia.attachDoubleClick(sypialniaDoubleClick);
+  
+  sypialnia2.attachClick(sypialnia2Click);
+  sypialnia2.attachLongPressStop(sypialnia2Off);
+  sypialnia2.attachDoubleClick(sypialnia2DoubleClick);
+  
+  garderoba.attachClick(garderobaClick);
+  garderoba.attachLongPressStop(garderobaOff);
+  garderoba.attachDoubleClick(garderobaDoubleClick);
+  
+  hania1.attachClick(hania1Click);
+  hania1.attachLongPressStop(hania1Off);
+  hania1.attachDoubleClick(hania1DoubleClick);
+  
+  hania2.attachClick(hania2Click);
+  hania2.attachLongPressStop(hania2Off);
+  hania2.attachDoubleClick(hania2DoubleClick);
+  
+  korytarz2.attachClick(korytarz2Click);
+  korytarz2.attachLongPressStop(korytarz2Off);
+  korytarz2.attachDoubleClick(korytarz2DoubleClick);
+  
+  korytarzL.attachClick(korytarzLClick);
+  korytarzL.attachLongPressStop(korytarzLOff);
+  korytarzL.attachDoubleClick(korytarzLDoubleClick);
 }
